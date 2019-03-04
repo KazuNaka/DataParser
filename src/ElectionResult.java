@@ -6,18 +6,32 @@ public class ElectionResult {
     private double votes_gop;
     private double total_votes;
     private double per_dem;
-    private double diff;
+    private double per_gop;
+    private int diff;
     private String per_point_diff;
     private String state_abbr;
     private String country_name;
     private int combined_fip;
 
-    public ElectionResult() {
-
+    public ElectionResult(double votes_dem, double votes_gop, double total_votes, double per_dem, double per_gop, int diff, String per_point_diff, String state_abbr, String country_name, int combined_fip) {
+        setVotes_dem(votes_dem);
+        setVotes_gop(votes_gop);
+        setTotal_votes(total_votes);
+        setPer_dem(per_dem);
+        setPer_gop(per_gop);
+        setDiff(diff);
+        setPer_point_diff(per_point_diff);
+        setState_abbr(state_abbr);
+        setCountry_name(country_name);
+        setCombined_fip(combined_fip);
     }
 
     public void setVotes_dem(double votes_dem) {
         this.votes_dem = votes_dem;
+    }
+
+    public void setPer_gop(double per_gop) {
+        this.per_gop = per_gop;
     }
 
     public void setVotes_gop(double votes_gop) {
@@ -32,7 +46,7 @@ public class ElectionResult {
         this.per_dem = per_dem;
     }
 
-    public void setDiff(double diff) {
+    public void setDiff(int diff) {
         this.diff = diff;
     }
 
@@ -60,6 +74,11 @@ public class ElectionResult {
         return votes_gop;
     }
 
+
+    public double getPer_gop() {
+        return per_gop;
+    }
+
     public double getTotal_votes() {
         return total_votes;
     }
@@ -68,7 +87,7 @@ public class ElectionResult {
         return per_dem;
     }
 
-    public double getDiff() {
+    public int getDiff() {
         return diff;
     }
 
@@ -91,15 +110,16 @@ public class ElectionResult {
     @Override
     public String toString() {
         return "ElectionResult{" +
-                "votes_dem=" + votes_dem +
-                ", votes_gop=" + votes_gop +
-                ", total_votes=" + total_votes +
-                ", per_dem=" + per_dem +
-                ", diff=" + diff +
-                ", per_point_diff='" + per_point_diff + '\'' +
-                ", state_abbr='" + state_abbr + '\'' +
-                ", country_name='" + country_name + '\'' +
-                ", combined_fip=" + combined_fip +
+                "\n votes_dem :" + votes_dem +
+                ",\n votes_gop :" + votes_gop +
+                ",\n total_votes :" + total_votes +
+                ",\n per_dem :" + per_dem +
+                ",\n per_gop :" + per_gop +
+                ",\n diff :" + diff +
+                ",\n per_point_diff :'" + per_point_diff + '\'' +
+                ",\n state_abbr :'" + state_abbr + '\'' +
+                ",\n country_name :'" + country_name + '\'' +
+                ",\n combined_fip :" + combined_fip +
                 '}';
     }
 }
