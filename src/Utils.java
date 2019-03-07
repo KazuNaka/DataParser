@@ -26,25 +26,11 @@ public class Utils {
     public static ArrayList<ElectionResult> parse2016ElectionResult (String data) {
         String[] datalines = data.split("\n");
         ArrayList<ElectionResult> results = new ArrayList<ElectionResult>(datalines.length);
-        int index1;
         int index2 = -1;
 
         for (int i = 1; i < datalines.length; i++) {
 
-            for (int j = 0; j < datalines[i].length(); j++) {
-                index1 = datalines[i].indexOf("\"", index2 + 1);
-                index2 = datalines[i].indexOf("\"", index1 + 1);
-                if(index1 != -1 && index2 != -1) {
-                    String temp = datalines[i].substring(index1, index2 + 1);
-                    temp = temp.replace(",", "");
-                    temp = temp.replace("\"", "");
-                    datalines[i] = datalines[i].substring(0,index1) + temp + datalines[i].substring(index2 + 1, datalines[i].length());
-
-                }
-
-
-            }
-
+            removecomma(datalines, i, index2);
 
             String[] dataset = datalines[i].split(",");
             double votes_dem = Double.parseDouble(dataset[1]);
@@ -62,5 +48,21 @@ public class Utils {
         }
 
         return results;
+    }
+
+    private static void removecomma(String[] datalines, int i, int index2) {
+        for (int j = 0; j < datalines[i].length(); j++) {
+            int index1 = datalines[i].indexOf("\"", index2 + 1);
+            index2 = datalines[i].indexOf("\"", index1 + 1);
+            if(index1 != -1 && index2 != -1) {
+                String temp = datalines[i].substring(index1, index2 + 1);
+                temp = temp.replace(",", "");
+                temp = temp.replace("\"", "");
+                datalines[i] = datalines[i].substring(0,index1) + temp + datalines[i].substring(index2 + 1, datalines[i].length());
+
+            }
+
+
+        }
     }
 }
