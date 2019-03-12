@@ -9,9 +9,13 @@ public class Main {
         // Test of Utils
 
         String data = Utils.readFileAsString("data/2016_Presidential_Results.csv");
+        String Educationdata = Utils.readFileAsString("data/Education.csv");
 
-        ArrayList<ElectionResult> results = Utils.parse2016ElectionResult(data);
-        System.out.println(results.toString());
+//        ArrayList<ElectionResult> results = Utils.parse2016ElectionResult(data);
+        ArrayList<Education2016> results = Utils.parse2016EducationResult(Educationdata);
+
+//        System.out.println(results.toString());
+
 
     }
 }

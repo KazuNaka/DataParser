@@ -4,6 +4,13 @@ public class Education2016 {
     private double someCollege;
     private double bachelorsOrMore;
 
+    public Education2016(double noHigh, double OnlyHigh, double someCollege, double bachelorsorMore) {
+        setNoHighSchool(noHigh);
+        setOnlyHighSchool(OnlyHigh);
+        setSomeCollege(someCollege);
+        setBachelorsOrMore(bachelorsorMore);
+    }
+
     public void setNoHighSchool(double noHighSchool) {
         this.noHighSchool = noHighSchool;
     }
