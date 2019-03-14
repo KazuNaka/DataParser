@@ -4,6 +4,10 @@ public class State {
     private String name;
     private List<County> countries;
 
+    public State(String name, List<County> countries){
+        setName(name);
+        setCountries(countries);
+    }
     public List<County> getCountries() {
         return countries;
     }

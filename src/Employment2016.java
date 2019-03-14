@@ -4,6 +4,13 @@ public class Employment2016 {
     private int unemployedLaborForce;
     private double unemployedPercent;
 
+    public Employment2016(int totalLaborForce, int employedLaborForce, int unemployedLaborForce, double unemployedPercent) {
+        setTotalLaborForce(totalLaborForce);
+        setEmployedLaborForce(employedLaborForce);
+        setUnemployedLaborForce(unemployedLaborForce);
+        setUnemployedPercent(unemployedPercent);
+    }
+
     public void setTotalLaborForce(int totalLaborForce) {
         this.totalLaborForce = totalLaborForce;
     }
