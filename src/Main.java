@@ -1,3 +1,4 @@
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 
 /***
@@ -8,14 +9,12 @@ public class Main {
     public static void main(String[] args) {
         // Test of Utils
 
-        String data = Utils.readFileAsString("data/2016_Presidential_Results.csv");
+        String Presidentialdata = Utils.readFileAsString("data/2016_Presidential_Results.csv");
         String Educationdata = Utils.readFileAsString("data/Education.csv");
+        String Unemploymentdata = Utils.readFileAsString("data/Unemployment.csv");
 
-//        ArrayList<ElectionResult> results = Utils.parse2016ElectionResult(data);
-        ArrayList<Education2016> results = Utils.parse2016EducationResult(Educationdata);
-
-//        System.out.println(results.toString());
-
+//        ArrayList<ElectionResult> Presidentialresults = Utils.parse2016ElectionResult(Presidentialdata);
+        ArrayList<Education2016> EducationResults = Utils.parseEducation(Educationdata);
 
     }
 }

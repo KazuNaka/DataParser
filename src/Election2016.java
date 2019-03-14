@@ -3,6 +3,12 @@ public class Election2016 {
     private double gopVotes;
     private double totalVotes;
 
+    public Election2016(double demVotes, double gopVotes, double totalVotes) {
+        setDemVotes(demVotes);
+        setGopVotes(gopVotes);
+        setTotalVotes(totalVotes);
+    }
+
     public double getDemVotes() {
         return demVotes;
     }

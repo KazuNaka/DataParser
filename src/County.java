@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class County {
     private String name;
     private int fips;
